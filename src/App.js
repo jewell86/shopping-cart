@@ -17,7 +17,7 @@ class App extends Component {
           <CartItems />
         </div>  
         <div>
-          <CartFooter />
+          <CartFooter copyright="2016"/>
         </div>
       </div>
     );
