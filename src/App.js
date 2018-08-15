@@ -4,6 +4,7 @@ import CartHeader from './components/header'
 import CartFooter from './components/footer'
 import CartItems from './components/cartitems'
 import CartForm from './components/cartform'
+import Total from './components/total'
 
 
 class App extends Component {
@@ -31,7 +32,6 @@ class App extends Component {
   }
   
   addProducts = ( product ) => {
-    console.log(product)
     const newItem = { ...product }
     this.setState({ cartItemsList: [ ...this.state.cartItemsList, newItem ]})
   }
@@ -47,6 +47,9 @@ class App extends Component {
         <div>
           <CartItems cartItemsList={ this.state.cartItemsList } />
         </div>  
+        <div>
+          <Total cartItemsList={ this.state.cartItemsList }/>
+        </div>
         <div>
           <CartForm addProducts={ this.addProducts } cartProducts={ this.state.products } />
         </div>
