@@ -1,9 +1,10 @@
 import React from 'react'
 
 const CartItemsComponent = ({item}) => {
-  const total = JSON.stringify(item.product.priceInCents)
-  const totalAmount = ((Number(`${total.slice(0, total.length-2)}.${total.slice(total.length-2, total.length)}`)*(Number(item.quantity))))
-  console.log(totalAmount)
+
+
+  const total = item.product.priceInCents
+  const totalAmount = `${(total/100).toFixed(2)}`
     return (
 <div className="list-group-item">
 <div className="row">

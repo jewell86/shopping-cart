@@ -32,7 +32,6 @@ onSubmit = (event) => {
 
 
 render() {
-    // console.log(this.props.cartProducts)
     return (
         <div className="container">
             <form onSubmit={ this.onSubmit }>

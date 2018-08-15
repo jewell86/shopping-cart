@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 
 const Total = ({ cartItemsList }) => {
-    const total = JSON.stringify(cartItemsList.reduce(function(acc, item) {
-        return acc += Number(item.product.priceInCents)
-    }, 0))
-    const newTotal = `${total.slice(0, total.length-2)}.${total.slice(total.length-2, total.length)}`
+
+    const total = cartItemsList.reduce(function(acc, item) {
+        acc += (item.product.priceInCents)*item.quantity
+        return acc
+    }, 0)
+    
+    const newTotal = `${(total/100).toFixed(2)}`
 
     return (
         <div className="container">
